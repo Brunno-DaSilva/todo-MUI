@@ -1,7 +1,8 @@
-const Todo = ({ onSubmit }) => {
+import TodoForm from "./TodoForm";
+const Todo = ({ addTodo }) => {
   return (
     <div className="Todo">
-      <p>Todo List</p>
+      <TodoForm onSubmit={addTodo} />
     </div>
   );
 };

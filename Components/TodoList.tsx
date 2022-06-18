@@ -14,7 +14,7 @@ const TodoList = () => {
   };
   return (
     <div className="TodoList">
-      <Todo onSubmit={addTodo} />
+      <Todo addTodo={addTodo} />
     </div>
   );
 };

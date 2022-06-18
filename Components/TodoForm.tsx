@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Button, FormControl, FilledInput } from "@mui/material";
 
-const TodoForm = ({ modalIsOpen, modalIsOpenHandler, ...props }) => {
+const TodoForm = ({ addTodo, modalIsOpen, modalIsOpenHandler, ...props }) => {
   const [userInput, setUserInput] = useState("");
   const [id, setId] = useState(0);
 
@@ -26,7 +26,7 @@ const TodoForm = ({ modalIsOpen, modalIsOpenHandler, ...props }) => {
   };
 
   return (
-    <form className="todo_form">
+    <form className="todo_form" onSubmit={handleSubmit}>
       <div className="todo_form__task_editor">
         <div className="task_editor__input">
           <div>
@@ -61,10 +61,7 @@ const TodoForm = ({ modalIsOpen, modalIsOpenHandler, ...props }) => {
         </Button>
 
         {modalIsOpen && (
-          <Button
-            variant="contained"
-            onClick={handleSubmit && modalIsOpenHandler}
-          >
+          <Button variant="contained" onClick={modalIsOpenHandler}>
             Add task
           </Button>
         )}
